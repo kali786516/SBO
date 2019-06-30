@@ -1,0 +1,47 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET           /                        controllers.PlayTutorialController.index
+
+
+
+#Login
+GET           /                         controllers.PlayTutorialController.index
+#MyLogin
+POST         /mylogin/mylogin             controllers.PlayTutorialController.login
+POST         /mylogin/mysignup            controllers.MySignup.submit
+POST         /loginpage/login             controllers.PlayTutorialController.login
+POST         /signuppage/signup           controllers.Signup.submit
+GET          /home                        controllers.PlayTutorialController.home
+POST         /mylogin/authenticate        controllers.MySignup.authenticate
+
+#DBValues
+GET         /dbvalues                     controllers.PlayTutorialController.getdbvalues
+
+
+# Tasks
+GET           /tasks                     controllers.PlayTutorialController.tasks
+GET           /tasks/createnewtasks      controllers.PlayTutorialController.createnewtasks
+POST          /tasks                     controllers.PlayTutorialController.newTask
+DELETE        /tasks/:id                 controllers.PlayTutorialController.deleteTask(id: Int)
+
+# Search Artists
+GET          /artist                                                controllers.PlayTutorialController.listArtist
+GET          /artist/searchbyname/searchartistbyname                controllers.PlayTutorialController.searchArtistByName
+POST         /artist/searchbyname/:name                             controllers.PlayTutorialController.fetchArtistByName(name)
+GET          /artist/searchbycountry/searchartistbycountry          controllers.PlayTutorialController.searchArtistByCountry
+POST         /artist/searchbycountry/:country                       controllers.PlayTutorialController.fetchArtistByCountry(country)
+
+# Login page
+#GET         /login
+#POST        /login/:credentials
+
+
+
+#GET          /artist/:name                 controllers.PlayTutorialController.fetchArtistByName(name)
+#GET          /search/artist                controllers.PlayTutorialController.search(name:Option[String],country:String)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)

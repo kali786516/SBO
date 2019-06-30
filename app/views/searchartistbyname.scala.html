@@ -1,0 +1,9 @@
+@(artists:Seq[Artist])
+@main("Search Artist By Name") {
+<div>
+    <form action="@routes.PlayTutorialController.searchArtistByName()" method="post">
+        <input type="text" name="artistName" placeholder="Artist Name" required>
+        <input type="submit" class="btn btn-success" value="Search">
+    </form>
+</div>
+}
