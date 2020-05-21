@@ -39,7 +39,7 @@ object MyUser {
     DB.withConnection { implicit connection =>
       SQL(
         """
-         select * from user where
+         select * from MyUser where
          email = {email} and password = {password}
         """
       ).on(

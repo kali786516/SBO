@@ -9,3 +9,5 @@ libraryDependencies ++= Seq(
 )     
 
 play.Project.playScalaSettings
+
+resolvers += "Maven Central Server" at "https://repo1.maven.org/maven2"
